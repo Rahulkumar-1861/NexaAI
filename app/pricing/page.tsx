@@ -11,7 +11,7 @@ export default function PricingPage() {
         {/* Header */}
         <section className="text-center pt-24 pb-16 px-6 max-w-4xl mx-auto fade-in-up">
           <h1 className="font-headline text-5xl md:text-6xl lg:text-[72px] font-extrabold tracking-tight text-on-surface leading-[1.05] mb-6">
-            Text-first plans for <span className="text-primary">ethereal <br />thinkers.</span>
+            Text-first plans for <span className="text-primary">innovative <br />thinkers.</span>
           </h1>
           <p className="text-[17px] text-on-surface-variant font-medium leading-relaxed max-w-2xl mx-auto">
             Master the art of prompt engineering. Simple, distraction-free text-only service tiers for deep cognitive work.

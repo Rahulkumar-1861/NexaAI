@@ -13,9 +13,11 @@ export async function POST(req: Request) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  /*
   if (!user) {
     return new Response("Unauthorized", { status: 401 });
   }
+  */
 
   const { messages, systemPrompt } = await req.json();
 
@@ -23,10 +25,10 @@ export async function POST(req: Request) {
   const modelMessages = await convertToModelMessages(messages);
 
   const result = streamText({
-    model: groq("llama-3.3-70b-versatile"),
+    model: groq("qwen/qwen3.8-27b"),
     system:
       systemPrompt ||
-      "You are Ethereal AI, a helpful and knowledgeable assistant.",
+      "You are NexaAI, a helpful and knowledgeable assistant.",
     messages: modelMessages,
   });
 

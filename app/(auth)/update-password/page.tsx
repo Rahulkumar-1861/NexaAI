@@ -53,14 +53,14 @@ export default function UpdatePasswordPage() {
             </span>
           </div>
           <h1 className="font-headline text-xl font-bold tracking-tight text-on-surface">
-            Ethereal AI
+            Nexa AI
           </h1>
         </div>
         <h2 className="font-headline text-3xl font-extrabold tracking-tight text-on-surface leading-tight">
           Secure new password.
         </h2>
         <p className="mt-2 text-sm text-on-surface-variant font-medium">
-          Create a strong password for your Ethereal workspace.
+          Create a strong password for your Nexa AI workspace.
         </p>
       </div>
 

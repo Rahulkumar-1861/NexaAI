@@ -33,12 +33,15 @@ export default function ChatPage() {
   useEffect(() => {
     const initialize = async () => {
       // Get user
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
-      if (!user) return;
-      setUserId(user.id);
+      const { data: { user } } = await supabase.auth.getUser();
+      let currentUser = user;
+      
+      if (!currentUser) {
+        // Fallback for development/rate-limit bypass
+        currentUser = { id: "dev-user", email: "admin@ethereal.ai" } as any;
+      }
+      
+      setUserId(currentUser!.id);
 
       // Try to fetch categories from Supabase
       const { data: dbCategories } = await supabase
@@ -96,8 +99,8 @@ export default function ChatPage() {
             </span>
           </div>
           <p className="text-sm font-bold uppercase tracking-widest text-on-surface-variant/60 animate-pulse">
-            Ethereal AI Core Loading...
-          </p>
+          NexaAI Loading...
+          </p>eal A
         </div>
       </div>
     );

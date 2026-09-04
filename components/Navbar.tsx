@@ -7,7 +7,7 @@ export default function Navbar() {
         {/* Brand */}
         <Link href="/" className="flex items-center gap-2 group">
           <span className="font-headline text-lg font-black tracking-tight text-on-surface group-hover:text-primary transition-colors">
-            Ethereal AI
+            Nexa AI
           </span>
         </Link>
 

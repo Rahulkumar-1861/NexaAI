@@ -36,7 +36,7 @@ export default function Sidebar({
       {/* Brand & Logo */}
       <div className="px-6 mb-8">
         <Link href="/" className="font-headline text-lg font-bold text-primary tracking-tight">
-          Ethereal AI
+          Nexa AI
         </Link>
         <div className="mt-8">
           <h2 className="text-on-surface font-bold text-sm">Topics</h2>

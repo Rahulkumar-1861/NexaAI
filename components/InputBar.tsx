@@ -65,7 +65,7 @@ export default function InputBar({
               value={input}
               onChange={(e) => onInputChange(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Message Ethereal AI..."
+              placeholder="Message Nexa AI..."
               rows={1}
               className="flex-1 resize-none bg-transparent py-4 text-[15px] font-medium text-on-surface placeholder:text-on-surface-variant/40 focus:outline-none border-none outline-none leading-relaxed"
               disabled={isLoading || isPolishing}

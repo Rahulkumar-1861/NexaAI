@@ -15,9 +15,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ethereal AI — Intelligent Chat Assistant",
+  title: "NexaAI — Intelligent Chat Assistant by Rahul Kumar",
   description:
-    "Ask questions across categories and receive AI-powered answers with Ethereal AI, your premium Q&A chatbot.",
+    "Ask questions across categories and receive AI-powered answers with NexaAI, a premium Q&A chatbot developed by Rahul Kumar.",
 };
 
 export default function RootLayout({

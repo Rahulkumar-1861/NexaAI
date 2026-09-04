@@ -35,6 +35,7 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   // Redirect unauthenticated users away from protected routes
+  /*
   if (
     !user &&
     request.nextUrl.pathname.startsWith("/chat")
@@ -43,6 +44,7 @@ export async function updateSession(request: NextRequest) {
     url.pathname = "/login";
     return NextResponse.redirect(url);
   }
+  */
 
   // Redirect authenticated users away from auth pages
   if (

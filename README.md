@@ -1,8 +1,8 @@
-# Ethereal AI — Intelligent Chat Assistant
+# NexaAI — Intelligent Chat Assistant
 
-A premium, production-ready Q&A chatbot web application where users can ask questions across different topic categories and receive AI-powered answers. Built with Next.js 14, Supabase, and Groq.
+A premium, production-ready Q&A chatbot web application where users can ask questions across different topic categories and receive AI-powered answers. Built with Next.js 14, Supabase, and Groq. Customizable branding for Rahul Kumar.
 
-![Ethereal AI](https://img.shields.io/badge/Ethereal-AI-4f46e5?style=for-the-badge&logo=openai&logoColor=white)
+![NexaAI](https://img.shields.io/badge/NexaAI-4f46e5?style=for-the-badge&logo=openai&logoColor=white)
 
 ## ✨ Features
 
@@ -10,7 +10,7 @@ A premium, production-ready Q&A chatbot web application where users can ask ques
 - **AI-Powered Answers** — Streaming responses using Groq's LLaMA 3.3 70B model
 - **Authentication** — Secure email/password auth via Supabase
 - **Chat Persistence** — Conversations and messages saved to Supabase PostgreSQL
-- **Premium Design** — Glassmorphic UI with the Ethereal design system
+- **Premium Design** — Glassmorphic UI with the Rahul Kumar design system
 - **Three-Column Layout** — Sidebar, chat area, and insights panel
 - **Responsive** — Right panel hides on smaller screens
 - **Vercel-Ready** — Deploy with zero configuration
@@ -28,7 +28,7 @@ A premium, production-ready Q&A chatbot web application where users can ask ques
 
 ```bash
 git clone <your-repo-url>
-cd ethereal-ai
+cd rahul-kumar-ai
 ```
 
 ### 2. Install Dependencies
@@ -106,12 +106,12 @@ Run this in the SQL Editor to add the default categories:
 
 ```sql
 insert into categories (name, icon, system_prompt) values
-  ('General', 'chat', 'You are Ethereal AI, a helpful and knowledgeable general-purpose assistant. Provide clear, accurate, and well-structured answers to any question. Be conversational yet informative.'),
-  ('Health', 'monitor_heart', 'You are Ethereal AI, a health and wellness expert assistant. Provide evidence-based health information, wellness tips, and lifestyle advice. Always remind users to consult healthcare professionals for medical decisions. Be empathetic and thorough.'),
-  ('Sports', 'sports_soccer', 'You are Ethereal AI, a sports expert assistant. Provide detailed knowledge about various sports, athletes, statistics, training techniques, and sports history. Be enthusiastic and engaging in your responses.'),
-  ('Technology', 'memory', 'You are Ethereal AI, a technology expert assistant. Provide in-depth knowledge about software, hardware, programming, AI, cybersecurity, and emerging tech trends. Use technical terms when appropriate but explain them clearly.'),
-  ('Creative', 'palette', 'You are Ethereal AI, a creative writing and arts assistant. Help with brainstorming, storytelling, poetry, design concepts, and creative problem-solving. Be imaginative, inspiring, and encourage creative exploration.'),
-  ('Analytics', 'query_stats', 'You are Ethereal AI, a data analytics and business intelligence assistant. Help with data analysis concepts, statistical methods, visualization strategies, and business metrics interpretation. Be precise and data-driven.');
+  ('General', 'chat', 'You are NexaAI, a helpful and knowledgeable general-purpose assistant. Provide clear, accurate, and well-structured answers to any question. Be conversational yet informative.'),
+  ('Health', 'monitor_heart', 'You are NexaAI, a health and wellness expert assistant. Provide evidence-based health information, wellness tips, and lifestyle advice. Always remind users to consult healthcare professionals for medical decisions. Be empathetic and thorough.'),
+  ('Sports', 'sports_soccer', 'You are NexaAI, a sports expert assistant. Provide detailed knowledge about various sports, athletes, statistics, training techniques, and sports history. Be enthusiastic and engaging in your responses.'),
+  ('Technology', 'memory', 'You are NexaAI, a technology expert assistant. Provide in-depth knowledge about software, hardware, programming, AI, cybersecurity, and emerging tech trends. Use technical terms when appropriate but explain them clearly.'),
+  ('Creative', 'palette', 'You are NexaAI, a creative writing and arts assistant. Help with brainstorming, storytelling, poetry, design concepts, and creative problem-solving. Be imaginative, inspiring, and encourage creative exploration.'),
+  ('Analytics', 'query_stats', 'You are NexaAI, a data analytics and business intelligence assistant. Help with data analysis concepts, statistical methods, visualization strategies, and business metrics interpretation. Be precise and data-driven.');
 ```
 
 ### 5. Enable Supabase Auth
@@ -138,7 +138,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## 🏗️ Folder Structure
 
 ```
-ethereal-ai/
+nexaai/
 ├── app/
 │   ├── (auth)/
 │   │   ├── layout.tsx          ← Centered auth layout
@@ -148,7 +148,7 @@ ethereal-ai/
 │   │   └── chat/route.ts       ← Groq streaming API route
 │   ├── chat/
 │   │   └── page.tsx            ← Main chat interface
-│   ├── globals.css             ← Ethereal design system tokens
+│   ├── globals.css             ← Nexa AI design system tokens
 │   ├── layout.tsx              ← Root layout (fonts, head)
 │   └── page.tsx                ← Root redirect
 ├── components/
@@ -190,21 +190,21 @@ ethereal-ai/
    {
      name: "Finance",
      icon: "account_balance",
-     system_prompt: "You are Ethereal AI, a finance expert..."
+     system_prompt: "You are NexaAI, a finance expert..."
    }
    ```
 
 2. **Insert into Supabase:**
    ```sql
    insert into categories (name, icon, system_prompt)
-   values ('Finance', 'account_balance', 'You are Ethereal AI, a finance expert...');
+   values ('Finance', 'account_balance', 'You are NexaAI, a finance expert...');
    ```
 
 3. Icons are from [Material Symbols Outlined](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Outlined)
 
 ## 🎨 Design System
 
-The app uses the **Ethereal Design System** with:
+The app uses the **Nexa AI Design System** with:
 - **Colors:** Material Design 3 inspired indigo palette
 - **Typography:** Manrope (headlines) + Inter (body)
 - **Glassmorphism:** Frosted glass input bar and header

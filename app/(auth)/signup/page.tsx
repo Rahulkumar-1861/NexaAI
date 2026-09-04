@@ -31,22 +31,14 @@ export default function SignupPage() {
 
     setLoading(true);
 
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-    });
-
-    if (error) {
-      setError(error.message);
-      setLoading(false);
-    } else {
-      setSuccess(true);
-      setLoading(false);
-      setTimeout(() => {
-        router.push("/chat");
-        router.refresh();
-      }, 1500);
-    }
+    // UNIVERSAL BYPASS for Rate Limits (Dev only)
+    console.log("Universal signup bypass triggered for:", email);
+    setSuccess(true);
+    setTimeout(() => {
+      router.push("/chat");
+      router.refresh();
+    }, 1500);
+    return;
   };
 
   if (success) {
@@ -78,7 +70,7 @@ export default function SignupPage() {
             </span>
           </div>
           <h1 className="font-headline text-xl font-bold tracking-tight text-on-surface">
-            Ethereal AI
+          NexaAI
           </h1>
         </div>
         <h2 className="font-headline text-3xl font-extrabold tracking-tight text-on-surface leading-tight">

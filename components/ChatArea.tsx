@@ -44,26 +44,17 @@ export default function ChatArea({
     conversationIdRef.current = conversationId;
   }, [conversationId]);
 
-  // Memoize the transport so it's recreated when the system prompt changes
-  const transport = useMemo(
-    () =>
-      new TextStreamChatTransport({
-        api: "/api/chat",
-        body: {
-          systemPrompt: activeCategory?.system_prompt,
-        },
-      }),
-    [activeCategory?.system_prompt]
-  );
-
   const { messages, setMessages, sendMessage, status } = useChat({
-    transport,
+    api: "/api/chat",
+    body: {
+      systemPrompt: activeCategory?.system_prompt,
+    },
     onFinish: async ({ message }) => {
       const textContent = message.parts
         ?.filter((p): p is { type: "text"; text: string } => p.type === "text")
         .map((p) => p.text)
         .join("");
-      if (conversationIdRef.current && textContent) {
+      if (conversationIdRef.current && textContent && userId !== "dev-user") {
         await supabase.from("messages").insert({
           conversation_id: conversationIdRef.current,
           role: "assistant",
@@ -97,22 +88,28 @@ export default function ChatArea({
         return;
       }
 
-      const { data } = await supabase
-        .from("messages")
-        .select("*")
-        .eq("conversation_id", conversationId)
-        .order("created_at", { ascending: true });
+      try {
+        const { data, error } = await supabase
+          .from("messages")
+          .select("*")
+          .eq("conversation_id", conversationId)
+          .order("created_at", { ascending: true });
 
-      if (data && data.length > 0) {
-        setMessages(
-          data.map((msg) => ({
-            id: msg.id,
-            role: msg.role as "user" | "assistant",
-            content: msg.content,
-            createdAt: new Date(msg.created_at),
-            parts: [{ type: "text" as const, text: msg.content }],
-          }))
-        );
+        if (error) throw error;
+
+        if (data && data.length > 0) {
+          setMessages(
+            data.map((msg) => ({
+              id: msg.id,
+              role: msg.role as "user" | "assistant",
+              content: msg.content,
+              createdAt: new Date(msg.created_at),
+              parts: [{ type: "text" as const, text: msg.content }],
+            }))
+          );
+        }
+      } catch (err) {
+        console.error("Supabase loadMessages error:", err);
       }
     };
 
@@ -129,8 +126,8 @@ export default function ChatArea({
 
     let currentConvId = conversationIdRef.current;
 
-    // Create conversation if none exists
-    if (!currentConvId && activeCategory) {
+    // Create conversation if none exists (Skip if dev-user)
+    if (!currentConvId && activeCategory && userId !== "dev-user") {
       const { data } = await supabase
         .from("conversations")
         .insert({
@@ -147,8 +144,8 @@ export default function ChatArea({
       }
     }
 
-    // Save user message to Supabase
-    if (currentConvId) {
+    // Save user message to Supabase (Skip if dev-user)
+    if (currentConvId && userId !== "dev-user") {
       await supabase.from("messages").insert({
         conversation_id: currentConvId,
         role: "user",
@@ -260,7 +257,7 @@ export default function ChatArea({
                 </span>
               </div>
               <h3 className="font-headline text-3xl font-extrabold tracking-tight text-on-surface">
-                {activeCategory?.name || "Ethereal AI"}
+                {activeCategory?.name || "Nexa AI"}
               </h3>
               <p className="mt-4 max-w-sm text-[14px] font-medium text-on-surface-variant/50 leading-relaxed">
                 Send a prompt below to establish a neural connection.

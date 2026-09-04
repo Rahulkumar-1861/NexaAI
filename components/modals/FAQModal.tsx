@@ -17,8 +17,8 @@ const faqs = [
     answer: "Yes. All conversations belong exclusively to your workspace and are secured via Row-Level Security in your database. No other users can read your threads.",
   },
   {
-    question: "What is Ethereal Pro?",
-    answer: "Ethereal Pro is our upcoming subscription tier that unlocks ultra-low latency streams, increased context length for massive coding projects, and priority access to specialized analytical streams.",
+    question: "What is Rahul Pro?",
+    answer: "Rahul Pro is our upcoming subscription tier that unlocks ultra-low latency streams, increased context length for massive coding projects, and priority access to specialized analytical streams.",
   },
 ];
 

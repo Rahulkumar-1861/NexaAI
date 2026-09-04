@@ -81,11 +81,11 @@ export default function RightPanel({
         </div>
       </div>
 
-      {/* Ethereal Pro CTA strictly matching Screenshot 2 */}
+      {/* Rahul Pro CTA strictly matching Screenshot 2 */}
       <div className="mt-8 shrink-0">
         <div className="bg-[#3525cd] p-8 rounded-[1.5rem] text-white shadow-xl flex flex-col">
           <p className="text-[9px] font-bold uppercase tracking-widest mb-3 opacity-80">
-            Ethereal Pro
+            Rahul Pro
           </p>
           <p className="text-[13px] font-bold leading-snug mb-6">
             Experience lightning-fast reasoning and deeper creative insights.

@@ -10,10 +10,10 @@ export default function IntelligencePage() {
         {/* Header */}
         <section className="pt-24 pb-16 px-6 max-w-[1280px] mx-auto md:px-12 xl:px-24 fade-in-up">
           <h1 className="font-headline text-5xl md:text-6xl lg:text-[72px] font-extrabold tracking-tight text-on-surface leading-[1.05] mb-6 max-w-3xl">
-            Linguistic insight that <span className="text-primary">feels ethereal.</span>
+            Linguistic insight that <span className="text-primary">feels premium.</span>
           </h1>
           <p className="text-[17px] text-on-surface-variant font-medium leading-relaxed max-w-2xl">
-            Experience a digital partner that masters the nuance of human thought. From deep semantic analysis to sophisticated summarization, Ethereal AI redefines text intelligence.
+            Experience a digital partner that masters the nuance of human thought. From deep semantic analysis to sophisticated summarization, Nexa AI redefines text intelligence.
           </p>
         </section>
 

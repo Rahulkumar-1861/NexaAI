@@ -76,7 +76,7 @@ export default function UpgradeModal({ isOpen, onClose }: UpgradeModalProps) {
             </div>
 
             <h2 className="font-headline text-2xl font-extrabold text-on-surface mb-2">
-              Ethereal Pro
+              Rahul Pro
             </h2>
             <p className="text-sm text-on-surface-variant font-medium mb-8 leading-relaxed max-w-[280px]">
               Unlock lightning-fast reasoning, dedicated servers, and unlimited context windows.

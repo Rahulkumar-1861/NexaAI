@@ -22,7 +22,7 @@ export default function LandingPage() {
             
             <h1 className="font-headline text-5xl sm:text-6xl lg:text-[80px] font-extrabold tracking-tight text-on-surface leading-[1.05]">
               Experience the <br />
-              <span className="text-primary">Ethereal</span> Flow of <br />
+              <span className="text-primary">NexaAI</span> Flow of <br />
               Language.
             </h1>
             
@@ -159,7 +159,8 @@ export default function LandingPage() {
               Ready to touch the future?
             </h2>
             <p className="text-sm sm:text-base font-medium text-white/70 max-w-xl mx-auto mb-10 relative z-10">
-              Join thousands of thinkers who have integrated Ethereal AI into their daily ritual of communication.
+              Join thousands of thinkers who have integrated NexaAI
+               AI into their daily ritual of communication.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 relative z-10">
