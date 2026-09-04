@@ -1,5 +1,5 @@
 "use client";
-
+import { DefaultChatTransport } from "ai";
 import { useState, useRef, useEffect, useMemo, FormEvent } from "react";
 import { useChat } from "@ai-sdk/react";
 import { TextStreamChatTransport } from "ai";
@@ -45,10 +45,12 @@ export default function ChatArea({
   }, [conversationId]);
 
   const { messages, setMessages, sendMessage, status } = useChat({
-    api: "/api/chat",
-    body: {
-      systemPrompt: activeCategory?.system_prompt,
-    },
+    transport: new DefaultChatTransport({
+      api: "/api/chat",
+      body: {
+        systemPrompt: activeCategory?.system_prompt,
+      },
+    }),
     onFinish: async ({ message }) => {
       const textContent = message.parts
         ?.filter((p): p is { type: "text"; text: string } => p.type === "text")
